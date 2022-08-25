@@ -30,3 +30,7 @@
 nothing more than a Simple Button
 [touchableOpacity](https://reactnative.dev/docs/touchableopacity)
 
+4. Navigate to other Stack
+
+- navigate to "Details" how navigate in React Native
+- use Stack("Details","Home") instead URL

@@ -2,7 +2,10 @@ import { View, Image, Text } from 'react-native'
 import { useNavigation } from '@react-navigation/native';
 
 import { COLORS, SIZES, SHADOWS, assets } from "../constants";
-import { CircleButton } from './Button';
+
+// SubInfo
+import { SubInfo, PriceComp, SubTitle } from './SubInfo';
+import { CircleButton, RectButton } from './Button';
 
 const Card = ({ data }) => {
   const navigation = useNavigation();
@@ -26,6 +29,20 @@ const Card = ({ data }) => {
           }}
         />
         <CircleButton imgUrl={assets.heart} right={10} top={10} />
+      </View>
+      <SubInfo />
+      <View style={{ width: "100%", padding: SIZES.font }} >
+        <SubTitle title={data.name} subTitle={data.creator} titleSize={SIZES.large} subTitleSize={SIZES.small} />
+        <View style={{ marginTop: SIZES.font, flexDirection: "row", justifyContent: "space-between", alignItems: "center" }} >
+          <PriceComp price={data.price} />
+          <RectButton
+            minWidth={120}
+            fontSize={SIZES.font}
+            // navigate to "Details" how navigate in React Native
+            // use Stack("Details","Home") instead URL
+            handlePress={() => navigation.navigate("Details", { data })}
+          />
+        </View>
       </View>
     </View>
   )
