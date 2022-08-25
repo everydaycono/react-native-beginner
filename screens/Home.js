@@ -21,7 +21,7 @@ const Home = () => {
             renderItem={({ item }) => <Card data={item} />}
             keyExtractor={(item) => item.id}
             showsVerticalScrollIndicator={false}
-            ListHeaderComponent={<HomeHeader />}
+            ListHeaderComponent={<HomeHeader />} // place on top of the list
           />
         </View>
 

@@ -25,6 +25,14 @@
 
 [Flat list](https://reactnative.dev/docs/flatlist)
 
+- `ListHeaderComponent` 
+  - place on top of the list
+```js 
+  <FlatList
+    ListHeaderComponent={<HomeHeader />}
+  />
+```
+
 3. TouchableOpacity
 
 nothing more than a Simple Button
@@ -34,3 +42,18 @@ nothing more than a Simple Button
 
 - navigate to "Details" how navigate in React Native
 - use Stack("Details","Home") instead URL
+
+5. TextInput Component
+
+- textinput component => same
+```js
+  <TextInput />
+```
+
+6. Styles 
+
+- paddingHorizontal => padding left/right
+- marginHorizontal => margin left/right
+
+- paddingVertical => padding top/bottom
+- marginVertical => margin top/bottom
