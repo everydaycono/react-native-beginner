@@ -20,3 +20,13 @@
       </Stack.Navigator>
     </NavigationContainer>
 ```
+
+2. Flat List 
+
+[Flat list](https://reactnative.dev/docs/flatlist)
+
+3. TouchableOpacity
+
+nothing more than a Simple Button
+[touchableOpacity](https://reactnative.dev/docs/touchableopacity)
+
