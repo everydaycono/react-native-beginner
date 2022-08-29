@@ -7,9 +7,16 @@ import { COLORS, NFTData } from "../constants";
 
 // components
 import { Card, HomeHeader, FocusedStatusBar } from "../components"
-import { Colors } from 'react-native/Libraries/NewAppScreen';
 const Home = () => {
+  const [data, setData] = useState(NFTData)
 
+  const handleSearch = (value) => {
+    if (!value.length) return setData(NFTData);
+
+    const filteredData = data.filter(item => item.name.toLocaleLowerCase().includes(value.toLocaleLowerCase()));
+
+    return setData(filteredData);
+  }
   return (
     <SafeAreaView style={{ flex: 1 }} >
       <FocusedStatusBar background={COLORS.primary} />
@@ -17,11 +24,11 @@ const Home = () => {
       <View style={{ flex: 1 }} >
         <View style={{ zIndex: 0 }} >
           <FlatList
-            data={NFTData}
+            data={data}
             renderItem={({ item }) => <Card data={item} />}
             keyExtractor={(item) => item.id}
             showsVerticalScrollIndicator={false}
-            ListHeaderComponent={<HomeHeader />} // place on top of the list
+            ListHeaderComponent={<HomeHeader onSearch={handleSearch} />} // place on top of the list
           />
         </View>
 
